@@ -1,0 +1,225 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8fafc;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.main-history-div{
+  border-radius: 5px;
+  background-color: #f8fafc;
+  border: 1px solid rgb(161, 155, 155);
+  border-radius: 10px;
+  max-width: 220vw;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0 ,.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-history-div nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-bottom: 1px solid rgb(180, 176, 176);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-btns{
+  border: none;
+  background: none;
+}
+
+.nav-btns a{
+  text-decoration: none;
+  color: #545151;
+  font-size: 14px;
+  transition: 60ms;
+  padding-bottom: 10px;
+}
+
+.nav-btns a:hover{
+  border-bottom: 3px solid #1732ab;
+  color: #1a2d6b;
+}
+
+.nav-btns{
+  margin: 2px 8px;
+}
+
+.dark-mode-toggle{
+  border-radius: 50px;
+  border: none;
+  background-color: #222533;
+  cursor: pointer;
+  padding: 2px 3px;
+}
+
+.dark-mode-toggle:hover{
+  background-color: rgb(217, 222, 225);
+}
+
+.heading{
+  display: flex;
+  align-items: center;
+}
+
+.heading h2{
+  margin: 0px;
+}
+
+.logo{
+  font-size: 20px;
+  height: 1.5em;
+  margin-right: 2px;
+}
+
+.scope{
+  color: rgb(7, 136, 104);
+}
+
+.history-heading{
+  text-align: center;
+  color: #232c4d;
+}
+
+.search-bar{
+  position: relative;
+  padding : 8px 0px 8px 25px;
+  color: #443d3d;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(165, 162, 162);
+  background-color: #f8fafc;
+}
+
+.selection{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 80%;
+  background-color: #ffffff;
+  padding: 10px 25px;
+  border-radius: 15px;
+}
+
+.search-bar::placeholder{
+  color: #615454;
+  font-size: 14px;
+}
+
+.search-img{
+  position: absolute;
+  z-index: 1;
+  align-self: center;
+  transform: translateY(-2px);
+  padding-left: .2em;
+}
+
+.categoryFilter{
+  background-color: #f8fafc;
+  outline: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.month-div{
+  display: flex;
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+.month-div p{
+  display: inline-block;
+  font-weight: 560;
+  font-family: cursive;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.year-span{
+  color: rgb(154, 12, 12);
+  margin-left: 8%;
+}
+
+.categoryDiv,
+.showTotal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 10px;
+}
+
+.showTotal{
+  color: rgb(78, 72, 72);
+  font-size: 14px;
+}
+
+.totalSpanAmt{
+  color: rgb(15, 15, 65);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.category-selection{
+  display: flex;
+  align-items: center;
+}
+
+.category-selection img{
+  margin-right: 8px;
+}
+
+.transaction-list{
+  width: 90%;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 10px;
+  background-color:  #ffffff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0 ,.4);
+  margin-bottom: 18px;
+}
+
+@media (max-width: 500px) {
+  .main-history-div{
+    max-width: 98vw;
+  }
+
+  .heading h2{
+    font-size: 20px;
+  }
+
+  .main-history-div nav{
+    padding: 5px;
+  }
+
+  .selection{
+    box-sizing: border-box;
+    gap: 5px;
+    padding: 5px 2px;
+  }
+
+  .categoryFilter{
+    padding: 8px 4px;
+  }
+
+  .showTotal{
+    font-size: 12px;
+  }
+
+  .totalSpanAmt{
+    font-family: 12px;
+    font-weight: 550;
+  }
+}

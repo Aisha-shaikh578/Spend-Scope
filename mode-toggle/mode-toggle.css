@@ -1,0 +1,155 @@
+body.mode{
+  background-color: rgb(48, 45, 45);
+  color: rgb(205, 197, 197);
+}
+
+body.mode header,
+body.mode main,
+body.mode div,
+body.mode .left-aside{
+  background-color: rgb(48, 45, 45);
+  color: rgb(200, 194, 194);
+}
+
+body.mode .left-aside ul li a span{
+  color: whitesmoke;
+}
+
+body.mode .user-name{
+  color: rgb(218, 221, 224);
+}
+
+body.mode .income,
+body.mode .expense,
+body.mode .balance{
+  background-color: rgb(234, 239, 239);
+  color: rgb(48, 45, 45);
+}
+
+body.mode .dark-mode-toggle{
+  background-color: rgb(217, 221, 224);
+}
+
+body.mode .dark-mode-toggle:hover{
+  background-color: rgb(34, 32, 32);
+}
+
+
+/* Mode Style for Todo-list*/
+body.mode .todo-div,
+body.mode .container,
+body.mode .input-div,
+body.mode .todo-div div{
+  background-color: #1e293b;
+}
+
+body.mode .dashboard-redirect{
+  background-color: #2f31b7;
+}
+
+body.mode .dashboard-redirect:active,
+body.mode .dashboard-redirect:hover{
+  background-color: rgb(28, 28, 169);
+}
+
+body.mode .addBtn{
+  background-color: #16a34a;
+}
+
+body.mode .addBtn:hover,
+body.mode .addBtn:active{
+  background-color: #22c55e;
+}
+
+body.mode .deleteBtn{
+  background-color: #dc2626;
+}
+
+body.mode .deleteBtn:hover,
+body.mode .deleteBtn:active{
+  background-color: #ef4444;
+}
+
+body.mode{
+  background-color: #0f172a;
+}
+
+body.mode .done{
+  color: rgb(132, 123, 123);
+}
+
+body.mode .input,
+body.mode .date{
+  background-color: #273449;
+  color:#e2e8f0;
+}
+
+body.mode .input::placeholder{
+  color: #cbdaee;
+}
+
+/* Mode Style for Add Expense */
+body.mode .expense-form-div,
+body.mode .expense-header,
+body.mode .expense-form-div p,
+body.mode .formError,
+body.mode .payment,
+body.mode input,
+body.mode select,
+body.mode .payment-type-div,
+body.mode .income-div{
+  background-color: rgba(0, 0, 27, 0.932);
+  color: rgb(203, 213, 221);
+}
+
+body.mode .formError{
+  color: rgb(201, 42, 42);
+}
+
+body.mode .header-div,
+body.mode .heading,
+body.mode .redirect-div{
+  background-color: rgb(16, 16, 42);
+}
+
+body.mode .expense-form-div .final-btns{
+  margin: 0;
+  background-color: rgba(0, 0, 27, 0.932);
+  padding-top: 15px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+  background-color: rgb(213, 218, 221);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* Mode Style for History */
+
+.history-body.mode{
+  background-color: #0d1425;
+}
+
+.history-body.mode nav,
+.history-body.mode nav .nav-btns,
+.history-body.mode .month-div,
+.history-body.mode .main-history-div,
+.history-body.mode nav .heading,
+.history-body.mode nav .dashDivs{
+  background-color: #141c2d;
+}
+
+.history-body.mode .main-history-div .selection,
+.history-body.mode .main-history-div .transaction-list,
+.history-body.mode .main-history-div .transaction-list div{
+  background-color: #1e2839;
+  color: #e2e8f0;
+}
+
+.history-body.mode .main-history-div h2{
+  color: #e2e8f0;
+}
+
+.history-body.mode .totalSpanAmt{
+  color: #e49c37;
+}

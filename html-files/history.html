@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History</title>
+</head>
+  <link rel="stylesheet" href="../mode-toggle/mode-toggle.css">
+  <link rel="stylesheet" href="../css-files/history.css">
+<body class="history-body">
+  <div class="main-history-div">
+    <nav>
+      <div class="heading">
+      <img src="../icons/logo.svg" class="logo">
+       <h2>Spend<span class="scope">Scope</span></h2>
+    </div>
+
+    <div class="dashboard-div dashDivs">
+      <button class="dashboard-btn nav-btns">
+        <a href="../index.html"><span>Dashboard</span></a>
+      </button>
+    </div>
+
+    <div class="history-div dashDivs">
+      <button class="history-btn nav-btns">
+        <a href="history.html"><span>History</span></a>
+      </button>
+    </div>
+
+    <div class="settings-div dashDivs">
+      <button class="settings-btn nav-btns">
+        <a href="../html-files/settings.html"><span>
+          Settings
+        </span></a>
+      </button>
+    </div>
+
+    <div class="mode-div dashDivs">
+      <button class="dark-mode-toggle">
+        <img src="../icons/dark-mode.svg" class="dark-mode-img">
+      </button>
+    </div>
+    </nav>
+
+    <h2 class="history-heading">Expense History</h2>
+
+    <div class="selection">
+      <div class="search-div">
+        <span><img class="search-img" src="../icons/search.svg">
+        <input type="text" class="search-bar"
+        placeholder="Search transactions..."></span>
+      </div>
+
+      <div class="category-div">
+        <select class="categoryFilter">
+          <option hidden>All Categories</option>
+          <option value="All">All</option>
+          <option value="Food">Food</option>
+          <option value="Rent">Rent</option>
+          <option value="Travel">Travel</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Investment">Investment</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="month-div">
+      <p class="month"></p>
+      <p class="year"><span class="year-span"></span></p>
+    </div>
+
+    <div class="transaction-list">
+      <div class="food-category-div categoryDiv">
+        <div class="category-selection">
+          <img src="../icons/food.svg" class="food-img">
+          <div>Food</div>
+        </div>
+
+        <div class="food-category-total">₹450</div>
+      </div>
+
+        <div class="rent-category-div categoryDiv">
+        <div class="category-selection">
+          <img src="../icons/rent.svg" class="rent-img">
+          <div>Rent</div>
+        </div>
+
+        <div class="rent-category-total">₹2,200</div>
+      </div>
+
+      <div class="travel-category-div categoryDiv">
+        <div class="category-selection">
+          <img src="../icons/travel.svg" class="travel-img">
+          <div>Travel</div>
+        </div>
+
+        <div class="travel-category-total">₹2,200</div>
+      </div>
+
+      <div class="shopping-category-div categoryDiv">
+        <div class="category-selection">
+          <img src="../icons/shopping.svg" class="shopping-img">
+          <div>Shopping</div>
+        </div>
+
+        <div class="shopping-category-total">₹999</div>
+      </div>
+
+      <div class="investment categoryDiv">
+        <div class="category-selection">
+          <img src="../icons/investment.svg" class="investment-img">
+          <div>Investment</div>
+        </div>
+
+        <div class="investment-category-total">₹2,200</div>
+      </div>
+
+       <div class="showTotal">
+        <div class="total-count">Showing 15 transactions</div>
+        <div class="totalAmt">Total Spent : <span class="totalSpanAmt">₹4,698</span></div>
+       </div>
+    </div>
+  </div>
+  <script type="module" src="../js-files/history.js"></script>
+</body>
+</html>

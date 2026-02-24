@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="mode-toggle/mode-toggle.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="left-side-header">
+      <img src="icons/logo.svg" class="logo">
+    <h2>Spend<span class="scope">Scope</span></h2>
+    </div>
+
+    <div class="right-side-header">
+      <h3 class="user-name">Aisha</h3>
+      <button class="dark-mode-toggle">
+        <img src="icons/dark-mode.svg" class="dark-mode-img">
+      </button>
+    </div>
+  </header>
+
+<div class="container">
+    <!-- Sidebar -->
+  <aside class="left-aside">
+    <ul>
+      <li>
+        <a href="index.html"><span>Dashboard</span></a>
+      </li>
+      <li>
+        <a href="html-files/expense.html"><span>Add Expense</span></a>
+      </li>
+      <li>
+        <a href="html-files/todo-list.html"><span>Todo-List</span></a>
+      </li>
+      <li>
+        <a href="html-files/history.html"><span>History</span></a>
+      </li>
+      <li>
+        <a href="settings.html"><span>Settings</span></a>
+      </li>
+    </ul>
+  </aside>
+
+ <!-- Main -->
+  <main>
+    <!-- Analyze Divs -->
+    <div class="analyze-div">
+      <div class="income div">
+        <p>Total Income</p>
+        <p class="income-amt"></p>
+      </div>
+
+      <div class="expense div">
+        <p>Total Expense</p>
+        <p class="expense-amt"></p>
+      </div>
+
+      <div class="balance div">
+        <p>Remaining Balance</p>
+        <p class="balance-amt"></p>
+      </div>
+    </div>
+
+    <!-- Charts -->
+     <div class="chart-div">
+      <div class="pie-chart-div">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.M5vxXmAyfr9e103re9GRFQHaF2?cb=defcachec2&w=768&h=607&rs=1&pid=ImgDetMain&o=7&rm=3" class="pie-chart">
+      </div>
+      <div class="monthly-chart-div">
+         <img src="https://tse3.mm.bing.net/th/id/OIP.M5vxXmAyfr9e103re9GRFQHaF2?cb=defcachec2&w=768&h=607&rs=1&pid=ImgDetMain&o=7&rm=3" class="pie-chart">
+      </div>
+     </div>
+     
+     <div class="recent-expenses">
+      <h2>Recent Expense</h2>
+
+      <div class="expense-item">
+        
+        <div class="date-div">
+          <h3 class="dateHeading">Date</h3>
+        </div>
+
+        <div class="category-div">
+          <h3 class="categoryHeading">Category</h3>
+        </div>
+
+        <div class="amount-div">
+          <h3 class="amountHeading">Amount</h3>
+        </div>
+
+        <div class="note-div">
+          <h3 class="noteHeading">Note</h3>
+        </div>
+
+      </div>
+     </div>
+ </main>
+</div>
+  
+  <script type="module" src="script.js"></script>
+</body>
+</html>

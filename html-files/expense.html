@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Expense</title>
+  <link rel="stylesheet" href="../mode-toggle/mode-toggle.css">
+  <link rel="stylesheet" href="../css-files/expense.css">
+</head>
+<body>
+
+  <div class="expense-form-div">
+    <header class="expense-header">
+      <div class="header-div">
+        <div class="heading">
+          <img src="../icons/logo.svg" class="logo">
+           <h4>Spend Scope</h4>
+        </div>
+        <div>
+          <div class="redirect-div">
+            <button class="redirect-btn">
+            <a href="../index.html"><span class="redirect"><img src="../icons/arrow-left.svg">Back to Dashboard</span></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="income-div">
+    <p>Total Income: </p>
+      <input type="text" class="inputIncome inputSpace" name="income">
+      <button class="saveBtn hoverEffect">Save income</button>
+    </div>
+
+    <h3>Add New Expense</h3>
+
+    <form class="add-expense-div">
+      <p>Amount Used</p>
+       <input type="text" class="inputAmt inputSpace" name="amount">
+       <div class="formError hide">*Enter your amount</div>
+
+      <p>Category</p>
+      <select name="select" class="inputSpace selectCategory">
+        <option hidden>Select category</option>
+        <option value="Food">Food</option>
+        <option value="Rent">Rent</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Investment">Investment</option>
+        <option value="HouseHold Requirements">HouseHold Requirements</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <p>Date</p>
+       <input type="date" class="inputDate inputSpace" name="date">
+
+      <div class="payment">
+        <div>
+         <p>Payment Method</p>
+        </div>
+        <div class="payment-type-div" class="inputSpace">
+          <button class="cash hoverEffect">Cash</button>
+          <button class="upi hoverEffect">UPI</button>
+        </div>
+      </div>
+
+      <p>Note <span class="optional">(optional)</span></p>
+      <input type="text" name="note" class="inputSpace inputNote" placeholder=" Enter a note">
+
+      <div class="final-btns">
+        <button class="cancel final hoverEffect">Cancel</button>
+        <button class="addExp final hoverEffect">Add Expense</button>
+      </div>
+    </form>
+  </div>
+  <script type="module" src="../js-files/expense.js"></script>
+</body>
+</html>
