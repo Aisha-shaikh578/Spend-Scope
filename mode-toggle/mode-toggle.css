@@ -135,7 +135,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 .history-body.mode .month-div,
 .history-body.mode .main-history-div,
 .history-body.mode nav .heading,
-.history-body.mode nav .dashDivs{
+.history-body.mode nav .dashDivs,
+.history-body.mode .showTotal,
+.history-body.mode .showTotal div{
   background-color: #141c2d;
 }
 
