@@ -13,17 +13,32 @@ const totalCount = document.querySelector('.total-count');
 const totaAmt = document.querySelector('.totalAmt');
 const searchBar = document.querySelector('.search-bar');
 
+function initializeHistory() {
+  if (!expenses || expenses.length === 0) {
+    container.innerHTML = '<div class="categoryDiv">Category not found</div>';
+    totaAmt.classList.add('hide');
+    totalCount.innerHTML = '';
+    return;
+  }
+}
+
 searchBar.addEventListener('input', function () {
   const search = searchBar.value;
 
  if(search === '') {
-  container.classList.remove('hide');
-  return;
+  initializeHistory();
  } else{
-     const filterSearch = expenses.filter(searchExp =>
+    const filterSearch = expenses.filter(searchExp =>
     searchExp.category.toLowerCase().includes(search.toLowerCase())
   )
-  renderHistory(filterSearch);
+
+   if(filterSearch.length === 0) {
+      container.innerHTML = '<div class="categoryDiv">Category not found</div>';
+      totaAmt.classList.add('hide');
+      totalCount.innerHTML = '';
+    } else{
+      renderHistory(filterSearch);
+    }
   }
  }
 )
@@ -37,10 +52,17 @@ categoryFilter.addEventListener('change', function () {
     container.classList.remove('hide');
   } else {
     const filtered = expenses.filter(expense => {
-      expense.category === selectedCategory;
-      console.log(filtered);
+      // If we dont return values in arrow function then the arrow function will take the value as undefined by itself
+      return expense.category === selectedCategory;
     });
-    renderHistory(filtered);
+
+    if(filtered.length === 0) {
+      container.innerHTML = '<div class="categoryDiv">Category not found</div>';
+      totaAmt.classList.add('hide');
+      totalCount.innerHTML = '';
+    } else{
+      renderHistory(filtered);
+    }
   }
 })
 
@@ -74,3 +96,4 @@ yearSpan.textContent = currentYear;
 }
 
 updateDays();
+initializeHistory();
