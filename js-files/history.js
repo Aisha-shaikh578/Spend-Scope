@@ -11,6 +11,22 @@ const container = document.querySelector('.transaction-list');
 const totalSpanAmt = document.querySelector('.totalSpanAmt');
 const totalCount = document.querySelector('.total-count');
 const totaAmt = document.querySelector('.totalAmt');
+const searchBar = document.querySelector('.search-bar');
+
+searchBar.addEventListener('input', function () {
+  const search = searchBar.value;
+
+ if(search === '') {
+  container.classList.remove('hide');
+  return;
+ } else{
+     const filterSearch = expenses.filter(searchExp =>
+    searchExp.category.toLowerCase().includes(search.toLowerCase())
+  )
+  renderHistory(filterSearch);
+  }
+ }
+)
 
 categoryFilter.addEventListener('change', function () {
   const selectedCategory = this.value;
@@ -22,6 +38,7 @@ categoryFilter.addEventListener('change', function () {
   } else {
     const filtered = expenses.filter(expense => {
       expense.category === selectedCategory;
+      console.log(filtered);
     });
     renderHistory(filtered);
   }
