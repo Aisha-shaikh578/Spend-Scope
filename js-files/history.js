@@ -8,17 +8,16 @@ const expenses = JSON.parse(localStorage.getItem('expenses'));
 const amountUsed = JSON.parse(localStorage.getItem('amountUsed'));
 const categoryFilter = document.querySelector('.categoryFilter');
 const container = document.querySelector('.transaction-list');
+const showTotalDiv = document.querySelector('.showTotal')
 const totalSpanAmt = document.querySelector('.totalSpanAmt');
 const totalCount = document.querySelector('.total-count');
-const totaAmt = document.querySelector('.totalAmt');
+const totalAmt = document.querySelector('.totalAmt');
 const searchBar = document.querySelector('.search-bar');
 
 function initializeHistory() {
   if (!expenses || expenses.length === 0) {
-    container.innerHTML = '<div class="categoryDiv">Category not found</div>';
-    totaAmt.classList.add('hide');
-    totalCount.innerHTML = '';
-    return;
+    container.innerHTML = '<div class="categoryDiv">Please select or search a category</div>';
+    showTotalDiv.classList.add('hide');
   }
 }
 
@@ -34,10 +33,10 @@ searchBar.addEventListener('input', function () {
 
    if(filterSearch.length === 0) {
       container.innerHTML = '<div class="categoryDiv">Category not found</div>';
-      totaAmt.classList.add('hide');
-      totalCount.innerHTML = '';
+      showTotalDiv.classList.add('hide');
     } else{
       renderHistory(filterSearch);
+      showTotalDiv.classList.add('hide');
     }
   }
  }
@@ -48,6 +47,7 @@ categoryFilter.addEventListener('change', function () {
 
   if(selectedCategory === 'All') {
     renderHistory(expenses);
+    showTotalDiv.classList.remove('hide');
   } else if(selectedCategory === '') {
     container.classList.remove('hide');
   } else {
@@ -58,10 +58,11 @@ categoryFilter.addEventListener('change', function () {
 
     if(filtered.length === 0) {
       container.innerHTML = '<div class="categoryDiv">Category not found</div>';
-      totaAmt.classList.add('hide');
+      totalAmt.classList.add('hide');
       totalCount.innerHTML = '';
     } else{
       renderHistory(filtered);
+      showTotalDiv.classList.add('hide');
     }
   }
 })
@@ -92,7 +93,7 @@ function renderHistory(data) {
     })
 
     totalCount.innerHTML = `Showing ${idx + 1} Transactions`;
-    totaAmt.classList.remove('hide');
+    totalAmt.classList.remove('hide');
     totalSpanAmt.textContent = `₹${amountUsed}`;
   })
 }
