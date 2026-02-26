@@ -66,6 +66,11 @@ categoryFilter.addEventListener('change', function () {
   }
 })
 
+function historyDetails(data) {
+  const idxExp = expenses[data];
+  renderDetails(idxExp);
+}
+
 function renderHistory(data) {
   container.innerHTML = '';
 
@@ -79,12 +84,32 @@ function renderHistory(data) {
 
         <div class="${exp.category}-category-total">₹ ${exp.amount}</div>
       </div>
+      <div class="details-div"></div>
     `;
+
+    container.querySelectorAll('.categoryDiv').forEach((element, idx) => {
+      element.addEventListener('click', () => renderDetails(data[idx]));
+    })
 
     totalCount.innerHTML = `Showing ${idx + 1} Transactions`;
     totaAmt.classList.remove('hide');
     totalSpanAmt.textContent = `₹${amountUsed}`;
   })
+}
+
+function renderDetails(idxExp) {
+  const createDiv = document.createElement('div');
+  const detailsDiv = document.querySelector('.details-div');
+  createDiv.classList.add('nestedDiv');
+
+ createDiv.innerHTML += `
+    <div>Date: ${idxExp.date}</div>
+    <div>Amount: ${idxExp.amount}</div>
+    <div>Note: ${idxExp.note}</div>
+  `;
+
+  console.log(idxExp);
+  detailsDiv.appendChild(createDiv);
 }
 
 function updateDays() {
@@ -94,6 +119,8 @@ const currentMonth = new Date().toLocaleString('en', {month : 'long'});
 month.textContent = currentMonth;
 yearSpan.textContent = currentYear;
 }
+
+window.historyDetails = historyDetails;
 
 updateDays();
 initializeHistory();
