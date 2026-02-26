@@ -67,50 +67,73 @@ categoryFilter.addEventListener('change', function () {
   }
 })
 
-function historyDetails(data) {
-  const idxExp = expenses[data];
-  renderDetails(idxExp);
-}
-
 function renderHistory(data) {
   container.innerHTML = '';
 
-  data.forEach((exp, idx) => {
-    container.innerHTML += `
+  //Group expenses by category
+  const groupedByCategory = data.reduce((total, exp) => {
+    if(!total[exp.category]) {
+      total[exp.category] = [];
+    }
+    total[exp.category].push(exp)
+    return total;
+  }, {});
+
+  let totalTransactionCount = 0;
+
+  // Rendering each category only once
+ Object.entries(groupedByCategory).forEach(([category, transaction]) => {
+  totalTransactionCount += transaction.length;
+
+  const selectedCategoryDiv = document.createElement('div');
+  selectedCategoryDiv.classList.add('selectedCategoryDiv');
+  selectedCategoryDiv.innerHTML = `
      <div class="categoryDiv">
         <div class="category-selection">
-          <img src="../icons/${exp.category}.svg" class="${exp.category}-img">
-          <div>${exp.category}</div>
+          <img src="../icons/${category}.svg" class="${category}-img">
+          <div>${category}</div>
         </div>
 
-        <div class="${exp.category}-category-total">₹ ${exp.amount}</div>
+        <div class="${category}-category-total">₹ ${transaction.reduce((sum, exp) => Number(sum + Number(exp.amount)), 0)}</div>
       </div>
       <div class="details-div"></div>
-    `;
-
-    container.querySelectorAll('.categoryDiv').forEach((element, idx) => {
-      element.addEventListener('click', () => renderDetails(data[idx]));
-    })
-
-    totalCount.innerHTML = `Showing ${idx + 1} Transactions`;
-    totalAmt.classList.remove('hide');
-    totalSpanAmt.textContent = `₹${amountUsed}`;
-  })
-}
-
-function renderDetails(idxExp) {
-  const createDiv = document.createElement('div');
-  const detailsDiv = document.querySelector('.details-div');
-  createDiv.classList.add('nestedDiv');
-
- createDiv.innerHTML += `
-    <div>Date: ${idxExp.date}</div>
-    <div>Amount: ${idxExp.amount}</div>
-    <div>Note: ${idxExp.note}</div>
   `;
 
-  console.log(idxExp);
+  const detailsDiv = document.createElement('div');
+  detailsDiv.classList.add('details-div');
+  detailsDiv.classList.add('hide');
+
+  selectedCategoryDiv.addEventListener('click', () => {
+    renderDetails(transaction, detailsDiv);
+  });
+
+  container.appendChild(selectedCategoryDiv);
+  container.appendChild(detailsDiv);
+ });
+
+    totalCount.innerHTML = `Showing ${totalTransactionCount} Transactions`;
+    totalAmt.classList.remove('hide');
+    totalSpanAmt.textContent = `₹${amountUsed}`;
+  }
+
+function renderDetails(expensesArray, detailsDiv) {
+  detailsDiv.classList.toggle('hide');
+  detailsDiv.innerHTML = '';
+
+  expensesArray.forEach((exp) => {
+    const createDiv = document.createElement('div');
+    createDiv.classList.add('nestedDiv');
+   
+  createDiv.innerHTML += `
+  <div class="detailsDivGrid">
+    <div>Date: ${exp.date || 'Not added'}</div>
+    <div>Amount: ${exp.amount || 'Not added'}</div>
+    <div>Note: ${exp.note || 'Not added'}</div>
+  </div>
+  `;
+
   detailsDiv.appendChild(createDiv);
+  })
 }
 
 function updateDays() {
@@ -120,8 +143,6 @@ const currentMonth = new Date().toLocaleString('en', {month : 'long'});
 month.textContent = currentMonth;
 yearSpan.textContent = currentYear;
 }
-
-window.historyDetails = historyDetails;
 
 updateDays();
 initializeHistory();

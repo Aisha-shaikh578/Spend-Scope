@@ -158,11 +158,15 @@ body{
   align-items: center;
   margin-bottom: 10px;
   border-bottom: 1px solid gainsboro;
-  padding-bottom: 10px;
 }
 
 .categoryDiv{
   cursor: pointer;
+}
+
+.detailsDivGrid{
+  display: grid;
+  gap: 5px;
 }
 
 .showTotal{
