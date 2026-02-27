@@ -143,7 +143,8 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 .history-body.mode .main-history-div .selection,
 .history-body.mode .main-history-div .transaction-list,
-.history-body.mode .main-history-div .transaction-list div{
+.history-body.mode .main-history-div .transaction-list div,
+.history-body.mode .msgBtn{
   background-color: #1e2839;
   color: #e2e8f0;
 }

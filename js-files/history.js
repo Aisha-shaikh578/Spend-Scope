@@ -13,6 +13,7 @@ const totalSpanAmt = document.querySelector('.totalSpanAmt');
 const totalCount = document.querySelector('.total-count');
 const totalAmt = document.querySelector('.totalAmt');
 const searchBar = document.querySelector('.search-bar');
+const msgBtn = document.querySelector('.msgBtn');
 
 function initializeHistory() {
   if (!expenses || expenses.length === 0) {
@@ -34,6 +35,7 @@ searchBar.addEventListener('input', function () {
    if(filterSearch.length === 0) {
       container.innerHTML = '<div class="categoryDiv">Category not found</div>';
       showTotalDiv.classList.add('hide');
+      msgBtn.classList.add('hide');
     } else{
       renderHistory(filterSearch);
       showTotalDiv.classList.add('hide');
@@ -60,6 +62,7 @@ categoryFilter.addEventListener('change', function () {
       container.innerHTML = '<div class="categoryDiv">Category not found</div>';
       totalAmt.classList.add('hide');
       totalCount.innerHTML = '';
+      msgBtn.classList.add('hide');
     } else{
       renderHistory(filtered);
       showTotalDiv.classList.add('hide');
@@ -99,6 +102,8 @@ function renderHistory(data) {
       <div class="details-div"></div>
   `;
 
+  msgBtn.classList.remove('hide');
+
   const detailsDiv = document.createElement('div');
   detailsDiv.classList.add('details-div');
   detailsDiv.classList.add('hide');
@@ -129,6 +134,7 @@ function renderDetails(expensesArray, detailsDiv) {
     <div>Date: ${exp.date || 'Not added'}</div>
     <div>Amount: ${exp.amount || 'Not added'}</div>
     <div>Note: ${exp.note || 'Not added'}</div>
+    <button class="deleteExpBtn">Delete</button>
   </div>
   `;
 
