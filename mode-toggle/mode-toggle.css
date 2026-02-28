@@ -137,6 +137,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 .history-body.mode nav .heading,
 .history-body.mode nav .dashDivs,
 .history-body.mode .showTotal,
+.settings-body.mode .add-profile-aside,
+.settings-body.mode .add-profile-aside .profile-left-aside,
+.settings-body.mode .add-profile-aside .profile-left-aside div,
 .history-body.mode .showTotal div{
   background-color: #141c2d;
 }
@@ -144,7 +147,16 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 .history-body.mode .main-history-div .selection,
 .history-body.mode .main-history-div .transaction-list,
 .history-body.mode .main-history-div .transaction-list div,
-.history-body.mode .msgBtn{
+.history-body.mode .msgBtn,
+.settings-body.mode .main-settings-div,
+.settings-body.mode .main-settings-div nav,
+.settings-body.mode .main-settings-div h2,
+.settings-body.mode .main-settings-div .heading,
+.settings-body.mode .main-settings-div .dashDivs,
+.settings-body.mode .main-settings-div .user-info-div .addProfileInfo,
+.settings-body.mode .main-settings-div .user-info-div .profile-theme-div,
+.settings-body.mode .main-settings-div .user-info-div .profile-theme-div .theme-btns,
+.settings-body.mode .main-settings-div .user-info-div{
   background-color: #1e2839;
   color: #e2e8f0;
 }

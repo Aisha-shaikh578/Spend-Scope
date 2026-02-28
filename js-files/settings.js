@@ -13,6 +13,8 @@ const notifications = document.querySelector('.notifications');
 const notificationsDiv = document.querySelector('.notificationsDiv');
 const userInfoDiv = document.querySelector('.user-info-div');
 
+const deleteAccountBtn = document.querySelector('.deleteAccountBtn');
+
 let mode = localStorage.getItem('currentMode');
 const lightTheme = document.querySelector('.lightTheme');
 const darkTheme = document.querySelector('.darkTheme');
@@ -37,6 +39,13 @@ notifications.addEventListener('click', () => {
   notifications.classList.add('now');
   notificationsDiv.classList.remove('hide');
   userInfoDiv.classList.add('hide');
+})
+
+deleteAccountBtn.addEventListener('click', () => {
+  inputUserName.value = '';
+  incomeProfile.value = '';
+  localStorage.setItem('userName', inputUserName.value);
+  localStorage.setItem('income', incomeProfile.value);
 })
 
 if(mode === 'dark') {
