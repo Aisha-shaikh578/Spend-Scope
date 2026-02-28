@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link rel="stylesheet" href="../mode-toggle/mode-toggle.css">
+  <link rel="stylesheet" href="../css-files/settings.css">
+</head>
+<body>
+  <div class="main-settings-div">
+    <nav>
+      <div class="heading">
+        <img src="../icons/logo.svg" class="logo">
+         <h2>Spend<span class="scope">Scope</span></h2>
+      </div>
+
+    <div class="dashboard-div dashDivs">
+      <button class="dashboard-btn nav-btns">
+        <a href="../index.html"><span>Dashboard</span></a>
+      </button>
+    </div>
+
+    <div class="history-div dashDivs">
+      <button class="history-btn nav-btns">
+        <a href="history.html"><span>History</span></a>
+      </button>
+    </div>
+
+    <div class="settings-div dashDivs">
+      <button class="settings-btn nav-btns">
+        <a href="../html-files/expense.html"><span>Add Expense</span></a>
+      </button>
+    </div>
+   </nav>
+
+     <h2 class="history-heading">Account Settings</h2>
+
+     <div class="add-profile">
+      <aside class="add-profile-aside">
+         <div class="add-profile-logo profile-left-aside now">
+          <div class="profileImg">
+            <img src="../icons/user-logo.svg">
+          </div>
+          <div>Profile</div>
+         </div>
+
+         <div class="notifications profile-left-aside">
+          <div class="notificationsImg">
+            <img src="../icons/notifications.svg">
+          </div>
+          <div>Notifications</div>
+         </div>
+      </aside>
+
+      <div class="user-info-div">
+        <div class="add-name-div">
+           <p>Name</p>
+           <input class="name-input-profile" type="text" placeholder="Enter Your Name">
+        </div>
+
+        <div class="add-income-profile-div">
+          <p>Monthly income</p>
+          <input class="income-input-profile" type="text" placeholder="Enter Monthly Income">
+        </div>
+
+        <div class="profile-theme-div">
+          <div>Theme</div>
+          <div class="theme-btns">
+            <button class="lightTheme currentModeBtn">
+              <img src="../icons/light-mode.svg">
+            </button>
+            <button class="darkTheme currentModeBtn">
+              <img src="../icons/dark-mode.svg">
+            </button>
+          </div>
+        </div>
+
+        <div class="dangerZone-div">
+          <div class="dangerHeadline">
+            <img src="../icons/warning.svg">
+            <p class="warning">Danger Zone</p>
+          </div>
+
+          <div class="accountDeleteDiv">
+            <button class="deleteAccountBtn">Delete Account</button>
+          </div>
+        </div>
+      </div>
+      <div class=" notificationsDiv hide">No Notifications</div>
+     </div>
+  </div>
+  <script type="module" src="../js-files/settings.js"></script>
+</body>
+</html>

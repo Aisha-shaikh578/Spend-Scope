@@ -50,8 +50,6 @@ categoryFilter.addEventListener('change', function () {
   if(selectedCategory === 'All') {
     renderHistory(expenses);
     showTotalDiv.classList.remove('hide');
-  } else if(selectedCategory === '') {
-    container.classList.remove('hide');
   } else {
     const filtered = expenses.filter(expense => {
       // If we dont return values in arrow function then the arrow function will take the value as undefined by itself
@@ -99,7 +97,6 @@ function renderHistory(data) {
 
         <div class="${category}-category-total">₹ ${transaction.reduce((sum, exp) => Number(sum + Number(exp.amount)), 0)}</div>
       </div>
-      <div class="details-div"></div>
   `;
 
   msgBtn.classList.remove('hide');

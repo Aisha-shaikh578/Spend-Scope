@@ -1,0 +1,296 @@
+:root{
+  --background-clr: #f8fafc;
+  --nav-clr:  #ffffff;
+  --hover-clr:  #2b48a7;
+  --hover-border: 3px solid #2941ab;
+  --profile-left-background-clr:  #eff2f5c9;
+  --border: 1px solid rgb(235, 212, 212);
+  --input-border: .3px solid rgb(204, 200, 200);
+  --input-background-clr: #eff2f5c9;
+  --danger-div-background: rgb(255, 219, 219);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--background-clr);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.main-settings-div{
+  background-color: var(--background-clr);
+  border: none;
+  box-shadow: 4px 8px 12px rgba(0,0,0,.3);
+  border-radius: 10px;
+}
+
+.main-settings-div nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: var(--nav-clr);
+  padding: 10px;
+  border-bottom: 1px solid rgb(180, 176, 176);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-btns{
+  border: none;
+  background: none;
+}
+
+.nav-btns a{
+  text-decoration: none;
+  color: #545151;
+  font-size: 14px;
+  transition: 60ms;
+  padding-bottom: 10px;
+}
+
+.nav-btns a:hover{
+  border-bottom: var(--hover-border);
+  color: var(--hover-clr);
+}
+
+.nav-btns{
+  margin: 2px 8px;
+}
+
+.heading{
+  display: flex;
+  align-items: center;
+}
+
+.heading h2{
+  margin: 0px;
+}
+
+.logo{
+  font-size: 20px;
+  height: 1.5em;
+  margin-right: 2px;
+}
+
+.scope{
+  color: rgb(7, 136, 104);
+}
+
+.history-heading{
+  text-align: center;
+  color: #232c4d;
+}
+
+.add-profile{
+  border-radius: 5px;
+  margin: 15px;
+  border-radius: 10px;
+  max-width: 220vw;
+  display: flex;
+  box-shadow: 2px 4px 10px rgba(0,0,0,.3);
+}
+
+.add-profile-aside{
+  display: flex;
+  background-color: var(--profile-left-background-clr);
+  padding: 5px;
+  flex-direction: column;
+}
+
+.profile-left-aside{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 4px 2px;
+  transition: 300ms ease;
+}
+
+.profile-left-aside img{
+  margin-right: 3px;
+}
+
+.profile-left-aside:hover,
+.profile-left-aside:active{
+  background-color: rgb(146, 141, 141);
+  color: white;
+}
+
+.user-info-div{
+  background-color: var(--nav-clr);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: var(--border);
+}
+
+.history-heading{
+  padding: 10px 0px;
+}
+
+p{
+  margin: 5px 0px;
+}
+
+input{
+  padding: 10px 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: var(--input-border);
+  background-color: var(--input-background-clr);
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  color: #545151;
+  margin-bottom: 16px;
+}
+
+.now{
+  background-color: rgb(220, 217, 217);
+}
+
+.profile-theme-div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.currentModeBtn{
+  border: none;
+  background: none;
+}
+
+.currTheme{
+  background-color: rgb(5, 26, 87);
+  padding: 0px 3px;
+  border-radius: 2px;
+}
+
+.theme-btns{
+  border: var(--border);
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.lightTheme{
+  border-right: 1px solid rgb(161, 158, 158);
+  padding-right: 3px;
+}
+
+.dangerZone-div{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--danger-div-background);
+  border-radius: 5px;
+  border: 1px solid red;
+}
+
+.dangerHeadline{
+  display: flex;
+  align-items: center;
+}
+
+.warning{
+  color: rgb(211, 16, 16);
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.deleteAccountBtn{
+  background-color: rgb(226, 57, 99);
+  color:#f8fafc;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  padding: 8px 0px;
+  font-size: 14px;
+  margin-top: 5px;
+  letter-spacing: .6px;
+  cursor: pointer;
+}
+
+.deleteAccountBtn:hover,
+.deleteAccountBtn:active{
+  opacity: .8;
+}
+
+.hide{
+  display: none;
+}
+
+@media (max-width: 500px) {
+  
+.main-settings-div nav{
+  padding: 5px 0px;
+  border-bottom: 1px solid rgb(180, 176, 176);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-settings-div nav .heading{
+  font-size: 10px;
+}
+
+.main-settings-div{
+  margin: 10px;
+}
+
+.nav-btns a{
+  text-decoration: none;
+  color: #545151;
+  font-size: 12px;
+  transition: 60ms;
+  padding-bottom: 4px;
+}
+
+.history-heading{
+  font-size: 14px;
+}
+
+input{
+  padding: 5px 2px;
+}
+
+.profile-left-aside{
+  font-size: 12px;
+}
+
+.deleteAccountBtn{
+  padding: 4px 0px;
+  font-size: 10px;
+}
+
+.dangerZone-div{
+  padding: 5px;
+}
+
+.warning{
+font-size: 12px;
+font-weight: 550;
+}
+
+.profile-theme-div{
+  font-size: 14px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+}
