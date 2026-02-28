@@ -4,8 +4,8 @@ toggle();
 
 const month = document.querySelector('.month');
 const yearSpan = document.querySelector('.year-span');
-const expenses = JSON.parse(localStorage.getItem('expenses'));
-const amountUsed = JSON.parse(localStorage.getItem('amountUsed'));
+let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+let amountUsed = JSON.parse(localStorage.getItem('amountUsed'));
 const categoryFilter = document.querySelector('.categoryFilter');
 const container = document.querySelector('.transaction-list');
 const showTotalDiv = document.querySelector('.showTotal')
@@ -116,13 +116,13 @@ function renderHistory(data) {
     totalCount.innerHTML = `Showing ${totalTransactionCount} Transactions`;
     totalAmt.classList.remove('hide');
     totalSpanAmt.textContent = `₹${amountUsed}`;
-  }
+}
 
 function renderDetails(expensesArray, detailsDiv) {
   detailsDiv.classList.toggle('hide');
   detailsDiv.innerHTML = '';
 
-  expensesArray.forEach((exp) => {
+  expensesArray.forEach(exp => {
     const createDiv = document.createElement('div');
     createDiv.classList.add('nestedDiv');
    
@@ -136,7 +136,22 @@ function renderDetails(expensesArray, detailsDiv) {
   `;
 
   detailsDiv.appendChild(createDiv);
+
+    const deleteExpBtn = createDiv.querySelector('.deleteExpBtn');
+    deleteExpBtn.addEventListener('click', () => {
+     deleteExp(exp);
   })
+  })
+}
+
+function deleteExp(exp) {
+  expenses = expenses.filter(expList => expList.id !== exp.id);
+  localStorage.setItem('expenses', JSON.stringify(expenses));
+
+  amountUsed = expenses.reduce((sum, amt) => sum + Number(amt.amount), 0);
+  localStorage.setItem('amountUsed', JSON.stringify(amountUsed));
+
+ renderHistory(expenses);
 }
 
 function updateDays() {

@@ -12,7 +12,7 @@ amountUsed.textContent = `₹${localStorage.getItem('amountUsed') || 0}`;
 
 // Getting remaining balance from local storage
 const balanceAmt = document.querySelector('.balance-amt');
-balanceAmt.textContent = `₹${localStorage.getItem('balance') || 0}`;
+balanceAmt.textContent = `₹${localStorage.getItem('income') - localStorage.getItem('amountUsed')}`;
 
 /* Updating Recent Expenses */
 const dateHeading = document.querySelector('.dateHeading');

@@ -43,7 +43,8 @@ function newExpense() {
     amount : amount.value,
     category : category.value,
     date : date.value,
-    note : note.value
+    note : note.value,
+    id: Math.round(Math.random() * 100)
   };
 }
 
