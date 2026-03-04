@@ -22,7 +22,8 @@ const noteHeading = document.querySelector('.noteHeading');
 
 const expense = JSON.parse(localStorage.getItem('expenses'));
 
-for(let i= expense.length-2; i < expense.length; i++) {
+function showRecentExpenses() {
+  for(let i= expense.length-2; i < expense.length; i++) {
   let dateDiv = document.createElement('div');
   dateHeading.append(dateDiv);
   dateDiv.classList.add('styleRows');
@@ -47,3 +48,6 @@ for(let i= expense.length-2; i < expense.length; i++) {
   noteDiv.style.color = '#8811a5';
   noteDiv.innerText = expense[i].note || 'Not added';
 }
+}
+
+showRecentExpenses();

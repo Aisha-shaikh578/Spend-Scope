@@ -10,11 +10,11 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(220, 200, 175);
+  background-color: #F1D7B8;
 }
 
 .container{
-  background-color: cadetblue;
+  background-color: #5A382C;
   padding: 20px;
   border-radius: 5px;
 }
@@ -28,16 +28,22 @@ body{
 .input{
   padding: 8px;
   border-radius: 2px;
-  color: rgb(24, 24, 138);
+  color: rgb(125, 53, 9);
+  background-color: #F3E7D3;
   font-size: 14px;
   border: none;
   outline: none;
 }
 
 .input::placeholder{
-  color: rgb(24, 24, 138);
+  color: rgb(125, 53, 9);
   font-weight: 500;
   font-size: 16px;
+}
+
+.input-div .date{
+  background-color: #F3E7D3;
+  color: rgb(125, 53, 9);
 }
 
 .date{
@@ -89,13 +95,14 @@ body{
   display: grid;
   grid-template-columns: 200px 170px 90px 40px;
   gap: 10px;
+  color: #e8c090;
   margin-top: 10px;
   align-items: center;
 }
 
 .done{
   text-decoration: line-through;
-  color: rgb(63, 62, 62);
+  color: rgb(164, 119, 91);
 }
 
 .task{
@@ -109,7 +116,7 @@ a{
 }
 
 .dashboard-redirect{
-  background-color: rgb(76, 137, 138);
+  background-color: #9c613e;
   color: white;
   border: none;
   padding: 8px 10px;
